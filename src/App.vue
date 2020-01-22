@@ -1,61 +1,151 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" app clipped>
+      <v-list dense>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-folder-information-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/information">Information</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-file-import</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/search/team">Search Team Data</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
-      <v-spacer></v-spacer>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-file-import</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/search/match">Search Match Data</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-upload</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/simpleupload">Simple Upload</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-upload</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/upload">Upload</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-database-import</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/sumdownload/team">Sum Dowunload Team Data</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-database-import</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/sumdonwload/match">Sum Dowunload Match Data</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-bell-ring</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/eventnotice">Eventnotice</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-settings</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/mypage">Mypage</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-login</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/login">Login</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-account-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              <router-link class="black--text" to="/register">Register</router-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app clipped-left color="blue darken-3 white--text">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Europa - Carnage Heart EXA Uploader -</v-toolbar-title>
     </v-app-bar>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
+    <router-view></router-view>
+
+    <v-footer app clipped-center color="blue darken-3 white--text">
+      <span>&copy; Team Project Europa 2016-{{new Date().getFullYear()}}</span>
+    </v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default Vue.extend({
   name: 'App',
 
-  components: {
-    HelloWorld,
-  },
-
   data: () => ({
-    //
+    drawer: false
   }),
 });
 </script>
