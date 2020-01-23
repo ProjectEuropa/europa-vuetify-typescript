@@ -2,7 +2,7 @@
   <v-content>
     <v-container fluid class="d-flex">
       <v-col cols="12" md="12">
-        <v-form ref="form" v-model="valid" lazy-validation justify="center">
+        <v-form ref="form" lazy-validation justify="center">
           <v-row align="center" justify="center">
             <v-card class="mx-auto">
               <v-card-title class="blue">
@@ -21,50 +21,48 @@
               <v-col cols="12" md="12">
                 <v-text-field
                   prepend-icon="mdi-calendar-edit"
-                  v-model="name"
+                  v-model="eventName"
                   :counter="10"
-                  :rules="nameRules"
+                  :rules="requiredRule"
                   label="イベント名"
                   required
                 ></v-text-field>
 
                 <v-textarea
                   prepend-icon="mdi-comment-multiple-outline"
-                  v-model="email"
-                  :rules="emailRules"
+                  v-model="eventDetails"
+                  :rules="requiredRule"
                   label="イベント詳細情報"
                   required
                 ></v-textarea>
 
                 <v-text-field
                   prepend-icon="mdi-google"
-                  v-model="name"
-                  :counter="10"
-                  :rules="nameRules"
+                  v-model="url"
+                  :counter="100"
                   label="イベント参照URL"
                   required
                 ></v-text-field>
 
                 <v-text-field
                   prepend-icon="mdi-av-timer"
-                  v-model="name"
+                  v-model="closeDay"
                   :counter="10"
-                  :rules="nameRules"
+                  :rules="requiredRule"
                   label="イベント受付期間締切日"
                   required
                 ></v-text-field>
 
                 <v-text-field
                   prepend-icon="mdi-lastpass"
-                  v-model="name"
+                  v-model="displayDay"
                   :counter="10"
-                  :rules="nameRules"
+                  :rules="requiredRule"
                   label="イベント表示最終日"
                   required
                 ></v-text-field>
 
                 <v-select prepend-icon="mdi-help-circle" :items="items" v-model="itemDefault"></v-select>
-
               </v-col>
               <v-card-actions class="justify-center">
                 <v-btn large block class="primary">イベント情報登録</v-btn>
@@ -77,26 +75,31 @@
   </v-content>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      items: [
-        {
-          text: "大会",
-          value: "1"
-        },
-        {
-          text: "告知",
-          value: "2"
-        },
-        {
-          text: "その他",
-          value: "3"
-        }
-      ],
-      itemDefault: "1"
-    };
-  }
-};
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+
+@Component
+export default class EventNotice extends Vue {
+  items: Array<object> = [
+    {
+      text: "大会",
+      value: "1"
+    },
+    {
+      text: "告知",
+      value: "2"
+    },
+    {
+      text: "その他",
+      value: "3"
+    }
+  ];
+  itemDefault: string = "1";
+  eventName: string = "";
+  eventDetails: string = "";
+  url: string = "";
+  closeDay: string = "";
+  displayDay: string = "";
+  requiredRule: Array<object> = [(value: any) => !!value || "こちらの項目は必須入力です"];
+}
 </script>
