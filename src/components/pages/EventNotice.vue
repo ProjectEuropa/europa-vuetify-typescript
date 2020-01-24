@@ -44,23 +44,61 @@
                   required
                 ></v-text-field>
 
-                <v-text-field
-                  prepend-icon="mdi-av-timer"
-                  v-model="closeDay"
-                  :counter="10"
-                  :rules="requiredRule"
-                  label="イベント受付期間締切日"
-                  required
-                ></v-text-field>
+                <v-menu
+                  v-model="menu"
+                  :close-on-content-click="false"
+                  :nudge-right="40"
+                  transition="scale-transition"
+                  offset-y
+                  min-width="290px"
+                >
+                  <template v-slot:activator="{ on }">
+                    <v-text-field
+                      prepend-icon="mdi-av-timer"
+                      v-model="closeDay"
+                      :counter="10"
+                      :rules="requiredRule"
+                      label="イベント受付期間締切日"
+                      v-on="on"
+                      required
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    no-title
+                    scrollable
+                    locale="ja"
+                    v-model="closeDay"
+                    @input="menu = false"
+                  ></v-date-picker>
+                </v-menu>
 
-                <v-text-field
-                  prepend-icon="mdi-lastpass"
-                  v-model="displayDay"
-                  :counter="10"
-                  :rules="requiredRule"
-                  label="イベント表示最終日"
-                  required
-                ></v-text-field>
+                <v-menu
+                  v-model="menu2"
+                  :close-on-content-click="false"
+                  :nudge-right="40"
+                  transition="scale-transition"
+                  offset-y
+                  min-width="290px"
+                >
+                  <template v-slot:activator="{ on }">
+                    <v-text-field
+                      prepend-icon="mdi-lastpass"
+                      v-model="displayDay"
+                      :counter="10"
+                      :rules="requiredRule"
+                      label="イベント表示最終日"
+                      v-on="on"
+                      required
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    no-title
+                    scrollable
+                    locale="ja"
+                    v-model="displayDay"
+                    @input="menu2 = false"
+                  ></v-date-picker>
+                </v-menu>
 
                 <v-select prepend-icon="mdi-help-circle" :items="items" v-model="itemDefault"></v-select>
               </v-col>
@@ -100,6 +138,10 @@ export default class EventNotice extends Vue {
   url: string = "";
   closeDay: string = "";
   displayDay: string = "";
-  requiredRule: Array<object> = [(value: any) => !!value || "こちらの項目は必須入力です"];
+  requiredRule: Array<object> = [
+    (value: any) => !!value || "こちらの項目は必須入力です"
+  ];
+  menu: boolean = false;
+  menu2: boolean = false;
 }
 </script>
