@@ -2,7 +2,7 @@
   <v-content>
     <v-container fluid class="d-flex">
       <v-col cols="12" md="12">
-        <v-form ref="form" v-model="valid" lazy-validation justify="center">
+        <v-form ref="form" lazy-validation justify="center">
           <v-row align="center" justify="center">
             <v-card class="mx-auto">
               <v-card-title class="blue">
@@ -19,15 +19,28 @@
               <v-col cols="12" md="12">
                 <v-text-field
                   prepend-icon="mdi-account-circle"
-                  v-model="name"
+                  v-model="ownerName"
                   :counter="10"
-                  :rules="nameRules"
+                  :rules="requiredRule"
                   label="オーナー名"
                   required
                 ></v-text-field>
 
-                <v-textarea prepend-icon="mdi-comment-multiple-outline" v-model="email" :rules="emailRules" label="コメント" required></v-textarea>
-                <v-combobox prepend-icon="mdi-tag-plus" v-model="select" :items="items" label="検索タグを設定して下さい" multiple chips>
+                <v-textarea
+                  prepend-icon="mdi-comment-multiple-outline"
+                  v-model="comment"
+                  :rules="requiredRule"
+                  label="コメント"
+                  required
+                ></v-textarea>
+                <v-combobox
+                  v-model="searchTag"
+                  :items="items"
+                  label="検索タグ"
+                  multiple
+                  chips
+                  prepend-icon="mdi-tag-plus"
+                >
                   <template v-slot:selection="data">
                     <v-chip
                       :key="JSON.stringify(data.item)"
@@ -45,7 +58,6 @@
                     </v-chip>
                   </template>
                 </v-combobox>
-
                 <v-file-input append-icon show-size counter multiple label="チームデータ"></v-file-input>
               </v-col>
               <v-card-actions class="justify-center">
@@ -58,3 +70,18 @@
     </v-container>
   </v-content>
 </template>
+
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+
+@Component
+export default class SimpleUpload extends Vue {
+  items: Array<string> = ["大会ゲスト許可", "フリーOKE"];
+  requiredRule: Array<object> = [
+    (value: any) => !!value || "こちらの項目は必須入力です"
+  ];
+  ownerName: string = "";
+  comment: string = "";
+  searchTag: Array<string> = [];
+}
+</script>
