@@ -4,6 +4,7 @@ import Top from './components/pages/Top.vue'
 import SimpleUpload from './components/pages/SimpleUpload.vue'
 import SearchTeam from './components/pages/SearchTeam.vue'
 import Login from './components/pages/Login.vue'
+import Register from './components/pages/Register.vue'
 import Information from './components/pages/Information.vue'
 import EventNotice from './components/pages/EventNotice.vue'
 
@@ -28,9 +29,14 @@ const router = new Router({
       component: SearchTeam,
     },
     {
-      path: '/Login',
+      path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register,
     },
     {
       path: '/information',
