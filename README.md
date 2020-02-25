@@ -20,5 +20,5 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Website
+See [Here](https://gracious-dijkstra-ccea6a.netlify.com/).
