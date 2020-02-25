@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Top from './components/pages/Top.vue'
 import SimpleUpload from './components/pages/SimpleUpload.vue'
 import SearchTeam from './components/pages/SearchTeam.vue'
+import SearchMatch from './components/pages/SearchMatch.vue'
+import SumDLTeamData from './components/pages/SumDLTeamData.vue'
 import Login from './components/pages/Login.vue'
 import Register from './components/pages/Register.vue'
 import Information from './components/pages/Information.vue'
@@ -27,6 +29,16 @@ const router = new Router({
       path: '/search/team',
       name: 'SearchTeam',
       component: SearchTeam,
+    },
+    {
+      path: '/search/match',
+      name: 'SearchMatch',
+      component: SearchMatch,
+    },
+    {
+      path: '/sumdownload/team',
+      name: 'SumDLTeamData',
+      component: SumDLTeamData,
     },
     {
       path: '/login',
