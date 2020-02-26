@@ -74,7 +74,7 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>
-              <router-link class="black--text" to="/sumdonwload/match">Sum Dowunload Match Data</router-link>
+              <router-link class="black--text" to="/sumdownload/match">Sum Dowunload Match Data</router-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>

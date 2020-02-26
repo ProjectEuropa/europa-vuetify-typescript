@@ -1,8 +1,8 @@
 <template>
   <v-content>
     <v-container fluid>
-      <h1 class="display-1 mb-4 text--darken-1">Sum DL Team Data</h1>
-      <h4 class="subheading">チームデータの一括ダウンロードが可能です。ダウンロードしたいデータにチェックを入れて一括ダウンロードボタンをクリックしてください。</h4>
+      <h1 class="display-1 mb-4 text--darken-1">Sum DL Match Data</h1>
+      <h4 class="subheading">マッチデータの一括ダウンロードが可能です。ダウンロードしたいデータにチェックを入れて一括ダウンロードボタンをクリックしてください。</h4>
       <v-form class="d-flex justify-md-space-center justify-sm-space-between">
         <v-text-field label="Solo" placeholder="keyword" solo></v-text-field>
         <v-select :items="items" v-model="itemDefault" solo></v-select>
@@ -48,92 +48,62 @@ export default class SearchTeam extends Vue {
   teams: Array<any> = [
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
 
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     },
     {
       name: "M2",
-      comments: `■秋季演習大会2019
-オーナー名：M2
-チーム名：TケルダールN「HB8」
-コメント：ハイブリッド月影第8弾`,
+      comments: `秋季演習大会2019`,
       file_name: "TKNHB8.CHE",
       date: "2019-10-19 11:44:30"
     }
