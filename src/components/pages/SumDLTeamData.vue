@@ -44,7 +44,7 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component
-export default class SearchTeam extends Vue {
+export default class SumDLTeamData extends Vue {
   teams: Array<any> = [
     {
       name: "M2",

@@ -58,6 +58,15 @@
                     </v-chip>
                   </template>
                 </v-combobox>
+                <v-text-field
+                  prepend-icon="mdi-lock"
+                  v-model="deletePassword"
+                  :counter="10"
+                  :rules="requiredRule"
+                  type="password"
+                  label="削除パスワード"
+                  required
+                ></v-text-field>
                 <v-file-input append-icon show-size counter multiple label="チームデータ"></v-file-input>
               </v-col>
               <v-card-actions class="justify-center">
@@ -83,5 +92,6 @@ export default class SimpleUpload extends Vue {
   ownerName: string = "";
   comment: string = "";
   searchTag: Array<string> = [];
+  deletePassword: string = "";
 }
 </script>

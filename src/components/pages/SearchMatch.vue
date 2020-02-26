@@ -45,7 +45,7 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component
-export default class SearchTeam extends Vue {
+export default class SearchMatch extends Vue {
   teams: Array<any> = [
     {
       name: "M2",
