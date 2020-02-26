@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Top from './components/pages/Top.vue'
+import Upload from './components/pages/Upload.vue'
 import SimpleUpload from './components/pages/SimpleUpload.vue'
 import SearchTeam from './components/pages/SearchTeam.vue'
 import SearchMatch from './components/pages/SearchMatch.vue'
@@ -20,6 +21,11 @@ const router = new Router({
       path: '/',
       name: 'Top',
       component: Top,
+    },
+    {
+      path: '/upload',
+      name: 'Upload',
+      component: Upload,
     },
     {
       path: '/simpleupload',

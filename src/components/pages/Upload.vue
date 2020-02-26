@@ -11,8 +11,8 @@
                     <v-icon>mdi-upload</v-icon>
                   </v-list-item-action>
                   <v-list-item-content>
-                    <v-list-item-title class="headline white--text">簡易アップロード(チームデータ)</v-list-item-title>
-                    <v-list-item-subtitle class="white--text">ユーザー登録処理をせずにチームデータアップロードが可能です。</v-list-item-subtitle>
+                    <v-list-item-title class="headline white--text">アップロード(チームデータ)</v-list-item-title>
+                    <v-list-item-subtitle class="white--text">チームデータのアップロードが可能です。</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
               </v-card-title>
@@ -58,15 +58,6 @@
                     </v-chip>
                   </template>
                 </v-combobox>
-                <v-text-field
-                  prepend-icon="mdi-lock"
-                  v-model="deletePassword"
-                  :counter="10"
-                  :rules="requiredRule"
-                  type="password"
-                  label="削除パスワード"
-                  required
-                ></v-text-field>
                 <v-file-input append-icon show-size counter multiple label="チームデータ"></v-file-input>
               </v-col>
               <v-card-actions class="justify-center">
@@ -77,8 +68,7 @@
         </v-form>
       </v-col>
     </v-container>
-
-    <v-container>
+    <v-container fluid class="d-flex">
       <v-col cols="12" md="12">
         <v-form ref="form" lazy-validation justify="center">
           <v-row align="center" justify="center">
@@ -89,8 +79,8 @@
                     <v-icon>mdi-upload</v-icon>
                   </v-list-item-action>
                   <v-list-item-content>
-                    <v-list-item-title class="headline white--text">簡易アップロード(マッチデータ)</v-list-item-title>
-                    <v-list-item-subtitle class="white--text">ユーザー登録処理をせずにマッチデータのアップロードが可能です。</v-list-item-subtitle>
+                    <v-list-item-title class="headline white--text">アップロード(マッチデータ)</v-list-item-title>
+                    <v-list-item-subtitle class="white--text">マッチデータのアップロードが可能です。</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
               </v-card-title>
@@ -136,15 +126,6 @@
                     </v-chip>
                   </template>
                 </v-combobox>
-                <v-text-field
-                  prepend-icon="mdi-lock"
-                  v-model="deletePassword"
-                  :counter="10"
-                  :rules="requiredRule"
-                  type="password"
-                  label="削除パスワード"
-                  required
-                ></v-text-field>
                 <v-file-input append-icon show-size counter multiple label="チームデータ"></v-file-input>
               </v-col>
               <v-card-actions class="justify-center">
@@ -162,7 +143,7 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component
-export default class SimpleUpload extends Vue {
+export default class Upload extends Vue {
   items: Array<string> = ["大会ゲスト許可", "フリーOKE"];
   requiredRule: Array<object> = [
     (value: any) => !!value || "こちらの項目は必須入力です"
